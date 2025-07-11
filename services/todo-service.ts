@@ -6,7 +6,6 @@ export class TodoService {
   private supabase = createClient();
   private auth = useAuth();
 
-
   async getTodos(userId: string, userEmail?: string): Promise<Todo[]> {
     if (!userId) {
       throw new Error("No userId provided");

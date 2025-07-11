@@ -54,7 +54,6 @@ export default function TodoDetailPage() {
         <TodoDetail
             todoId={todoId}
             userId={userId}
-            userEmail={userEmail}
         />
     );
 }

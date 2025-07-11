@@ -54,7 +54,7 @@ A collaborative Todo application built with Next.js, React, and Supabase. This a
 
 ### Prerequisites
 
-- Node.js (v14 or newer)
+- Node.js (v22 or newer)
 - npm or yarn
 - Supabase account and project
 

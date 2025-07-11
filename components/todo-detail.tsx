@@ -151,14 +151,19 @@ export default function TodoDetail({
   if (error) {
     return (
       <div className="max-w-4xl mx-auto p-6">
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-          <h3 className="text-red-800 font-semibold">Error</h3>
-          <p className="text-red-700">{error}</p>
+        <div className="bg-red-50 border-l-4 border-red-500 rounded-lg p-4 flex flex-col">
+          <div className="flex items-center mb-2">
+            <svg className="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zm-1 9a1 1 0 01-1-1v-4a1 1 0 112 0v4a1 1 0 01-1 1z" clipRule="evenodd" />
+            </svg>
+            <h3 className="text-red-800 font-bold text-lg">Error Occurred</h3>
+          </div>
+          <p className="text-red-700 mb-3">{error}</p>
           <button
             onClick={() => router.push("/todo")}
-            className="mt-2 text-blue-600 hover:text-blue-800"
+            className="self-start px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center"
           >
-            ← Back to Todos
+            <span className="mr-1">←</span> Back to Todos
           </button>
         </div>
       </div>

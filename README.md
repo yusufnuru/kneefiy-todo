@@ -1,105 +1,131 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# Kneefiy Todo App
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
-
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+A collaborative Todo application built with Next.js, React, and Supabase. This app allows users to create, manage, share, and collaborate on todos.
 
 ## Features
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+- **User Authentication**: Secure authentication via Supabase Auth
+- **Todo Management**: Create, update, and delete todos
+- **Collaboration**: Share todos with other users with permission controls
+- **Due Dates**: Set and track due dates for your todos
+- **Responsive Design**: Works on both desktop and mobile devices
+- **Real-time Updates**: Changes reflect immediately across shared users
 
-## Demo
+## Key Components
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+### Todo Management
 
-## Deploy to Vercel
+- Create and manage personal todos
+- Mark todos as complete/incomplete
+- Set due dates with visual indicators for overdue tasks
+- Delete unwanted todos
 
-Vercel deployment will guide you through creating a Supabase account and project.
+### Collaboration Features
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+- Share todos with other users via email
+- Control access permissions (read-only or read-write)
+- View shared todos alongside personal ones
+- See who has access to your todos
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+### User Interface
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+- Clean, responsive design built with Tailwind CSS
+- Intuitive modal interfaces for sharing and setting due dates
+- Detailed view for todo information and collaboration settings
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+## Technical Architecture
 
-## Clone and run locally
+- **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS
+- **Backend**: Supabase for authentication and database
+- **State Management**: React Context API and custom hooks
+- **Authentication**: Supabase Auth with cookie-based sessions
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+## Project Structure
 
-2. Create a Next.js app using the Supabase Starter template npx command
+- `/app` - Next.js app router pages
+- `/components` - Reusable React components
+- `/context` - React context providers
+- `/hooks` - Custom React hooks
+- `/lib` - Utility functions and Supabase client
+- `/services` - API service classes
+- `/types` - TypeScript type definitions
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+## Getting Started
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+### Prerequisites
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+- Node.js (v14 or newer)
+- npm or yarn
+- Supabase account and project
 
-3. Use `cd` to change into the app's directory
+### Setup
 
-   ```bash
-   cd with-supabase-app
-   ```
-
-4. Rename `.env.example` to `.env.local` and update the following:
-
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
-
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
-
-5. You can now run the Next.js local development server:
+1. Clone the repository
 
    ```bash
-   npm run dev
+   git clone https://github.com/yusufnuru/kneefiy-todo
+   cd kneefiy-todo
    ```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+2. Install dependencies
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+   ```bash
+   pnpm install
+   ```
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+3. Create a `.env.local` file with your Supabase credentials
 
-## Feedback and issues
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-project-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+4. Run the development server
 
-## More Supabase examples
+   ```bash
+   pnpm run dev
+   ```
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Database Schema
+
+The application uses the following Supabase tables:
+
+### todos
+
+This table stores the core todo items created by users.
+
+| Column      | Type        | Description                                  |
+| ----------- | ----------- | -------------------------------------------- |
+| id          | uuid        | Primary key. Unique identifier for the todo. |
+| user_id     | uuid        | The ID of the user who created the todo.     |
+| content     | text        | Main content of the todo item.               |
+| created_at  | timestamp   | When the todo was created.                   |
+| completed   | bool        | Whether the task is completed.               |
+| description | text        | Optional longer description.                 |
+| updated_at  | timestamptz | Last time the todo was updated.              |
+| due_date    | timestamptz | Optional due date for the task.              |
+
+### todo_shares
+
+This table handles the sharing of todos between users.
+
+| Column            | Type        | Description                                |
+| ----------------- | ----------- | ------------------------------------------ |
+| id                | uuid        | Primary key. Unique share entry ID.        |
+| todo_id           | uuid        | Foreign key referencing the shared todo.   |
+| shared_with_email | text        | Email of the user the todo is shared with. |
+| permission        | text        | Permission level (e.g. read_only, edit).   |
+| created_at        | timestamptz | When the share was created.                |
+| owner_email       | text        | Email of the original owner of the todo.   |
+
+#### Relationships
+
+- `todo_shares.todo_id` → references `todos.id`
+
+Each todo can be shared with multiple users, allowing collaborative task management.
+
+## License
+
+MIT License

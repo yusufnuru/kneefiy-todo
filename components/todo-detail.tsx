@@ -16,6 +16,7 @@ import DueDateModal from "@/components/due-date-modal";
 interface TodoDetailProps {
   todoId: string;
   userId: string;
+  userEmail?: string;
 }
 
 export default function TodoDetail({
